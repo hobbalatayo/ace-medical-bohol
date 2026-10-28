@@ -1,0 +1,169 @@
+:root {
+  --primary: #069a8e;
+  --secondary: #00c897;
+  --text: #344c5d;
+  --bg: #ffffff;
+  --accent: #001230;
+  --link: #4a6f8a;
+  --nav-active: #0f766e;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 5%;
+  background: var(--bg);
+  border-bottom: 1px solid #e3e9eb;
+}
+
+header > a {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--nav-active);
+}
+
+main section {
+  padding: 3rem 5%;
+}
+
+main section:first-child {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  max-width: 15ch;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+}
+
+.button {
+  display: inline-block;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.4rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.button--primary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.button--primary:hover,
+.button--primary:focus-visible {
+  background: var(--nav-active);
+  border-color: var(--nav-active);
+}
+
+.button--secondary {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--accent);
+}
+
+a {
+  color: var(--link);
+}
+
+footer {
+  padding: 2rem 5%;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer address {
+  font-style: normal;
+}
+
+@media (max-width: 700px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  nav ul {
+    justify-content: flex-start;
+    gap: 0.5rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
